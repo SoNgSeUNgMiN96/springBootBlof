@@ -46,6 +46,12 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-core:2.13.3'
 
     implementation 'org.springframework.boot:spring-boot-starter-mustache'
+
+    //스프링 시큐리티 소셜로그인 구현 시 필요
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+    //sprin-session-jdbc  등록
+    implementation 'org.springframework.session:spring-session-jdbc'
 }
 
 configurations {
