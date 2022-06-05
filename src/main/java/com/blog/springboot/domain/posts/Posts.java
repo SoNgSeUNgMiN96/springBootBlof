@@ -1,6 +1,7 @@
 package com.blog.springboot.domain.posts;
 
 
+import com.blog.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @Getter     //롬복 어노테이션  모든 Getter 자동 생성
 @NoArgsConstructor  //롬복 어노테이션  기본 생성자 자동 추가
 @Entity     //JPA 어노테이션 테이블과 링크될 클래스임을 나타냄
-public class Posts {        //주요 어노테이션을 클래스에 가깝게 둔다.
+public class Posts extends BaseTimeEntity {        //주요 어노테이션을 클래스에 가깝게 둔다.
 
     @Id //해당 테이블의 PK 필드를 나타냄
     @GeneratedValue(strategy = GenerationType.IDENTITY) //PK 생성 규칙. GenerationType.IDENTITY 옵션이 있어야만 auto_increment가 된다
@@ -31,4 +32,8 @@ public class Posts {        //주요 어노테이션을 클래스에 가깝게 �
         this.author = author;
     }
 
+    public void update(String title, String content){
+        this.title = title;
+        this.content = content;
+    }
 }
