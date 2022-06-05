@@ -52,6 +52,9 @@ dependencies {
 
     //sprin-session-jdbc  등록
     implementation 'org.springframework.session:spring-session-jdbc'
+
+    //spring security test
+    implementation 'org.springframework.security:spring-security-test'
 }
 
 configurations {

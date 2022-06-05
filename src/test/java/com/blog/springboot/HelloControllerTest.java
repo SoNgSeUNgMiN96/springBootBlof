@@ -1,6 +1,7 @@
 package com.blog.springboot;
 
 
+import com.blog.springboot.config.auth.SecurityConfig;
 import com.blog.springboot.web.HelloController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,17 +13,24 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.hamcrest.Matchers.is;
 
 @RunWith(SpringRunner.class)        //테스트ㅡ를 진행할 때 JUnit에 내장된 실행자 외에 다른 실자를 실행시킵니다.
-@WebMvcTest(controllers = HelloController.class)    //여러 테스트 어노테이션 중 Web에 집중할 수 있는 어노테이션
+@WebMvcTest(controllers = HelloController.class,
+    excludeFilters = {
+        @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = SecurityConfig.class)
+    })    //여러 테스트 어노테이션 중 Web에 집중할 수 있는 어노테이션
 public class HelloControllerTest {
 
     @Autowired      //스프링이 관리하는 빈을 주입받는다 ?
     private MockMvc mvc;
 
+    @WithMockUser(roles = "USER")
     @Test
     public void hello가_리턴된다() throws Exception{
         String hello = "hello";
@@ -31,6 +39,7 @@ public class HelloControllerTest {
                 .andExpect(content().string(hello));
     }
 
+    @WithMockUser(roles = "USER")
     @Test
     public void helloDto가_리턴된다() throws Exception{
         String name = "hello";
