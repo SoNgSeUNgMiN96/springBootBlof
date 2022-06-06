@@ -59,6 +59,15 @@ dependencies {
     //mysql 연동
     implementation 'mysql:mysql-connector-java'
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
+
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+
 }
 
 configurations {
