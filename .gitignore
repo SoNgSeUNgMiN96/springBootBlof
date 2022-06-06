@@ -4,4 +4,5 @@
 /.idea/
 /.build
 /.build/
-*.properties
+application.properties
+application-oauth.properties
