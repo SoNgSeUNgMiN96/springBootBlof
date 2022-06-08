@@ -27,7 +27,7 @@ deploy:
 
   bucket: seungmin-springboot-blog
   region: ap-northeast-2
-  skip_cleanup: true
+  skip_cleanup: true›
   acl: private
   local_dir: deploy
   wait-until-deployed : true
@@ -42,10 +42,10 @@ deploy:
   bundle_type: zip
   application: springBootBlog
   deployment_group: springBootBlogGroup
-
   region: ap-northeast-2
   wait-until-deployed : true
-
+  on:
+    all_branches: true
 
 
 # CI 실행 완료 시 메일로 알람
