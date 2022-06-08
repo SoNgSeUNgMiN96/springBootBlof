@@ -40,8 +40,8 @@ deploy:
   bucket: seungmin-springboot-blog
   key: springBootBlog.zip
   bundle_type: zip
-  application: springBootBlog
-  deployment_group: springBootBlogGroup
+application: spring-boot-blog
+  deployment_group: spring-boot-blog-group
 
   region: ap-northeast-2
   wait-until-deployed : true
