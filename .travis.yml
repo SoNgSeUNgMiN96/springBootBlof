@@ -14,16 +14,11 @@ cache:
 
 script: "./gradlew clean build"
 
-# CI 실행 완료 시 메일로 알람
-notifications:
-  email:
-    recipients:
-      -tmd9544@gmail.com
 
 before_deploy:
   - zip -r springBootBlog
-  -  mkdir -p deploy
-  -  mv springBootBlog.zip deploy/springBootBlog.zip
+  - mkdir -p deploy
+  - mv springBootBlog.zip deploy/springBootBlog.zip
 
 deploy:
   -provider : s3
@@ -36,5 +31,12 @@ deploy:
   acl: private
   local_dir: deploy
   wait-until-deployed : true
+
+
+# CI 실행 완료 시 메일로 알람
+notifications:
+  email:
+    recipients:
+      -tmd9544@gmail.com
 
 
