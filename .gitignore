@@ -2,7 +2,6 @@
 /.gradle/
 /.idea
 /.idea/
-application.properties
 application-oauth.properties
 application-real.properties
 build
