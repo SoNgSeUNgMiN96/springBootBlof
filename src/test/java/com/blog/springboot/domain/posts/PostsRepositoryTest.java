@@ -15,7 +15,6 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@TestPropertySource("classpath:application-test.properties")
 public class PostsRepositoryTest {
 
     @Autowired
