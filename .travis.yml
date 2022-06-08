@@ -39,7 +39,8 @@ deploy:
   bucket: seungmin-springboot-blog
   key: springBootBlog.zip
   bundle_type: zip
-application: spring-boot-blog
+
+  application: spring-boot-blog
   deployment_group: spring-boot-blog-group
 
   region: ap-northeast-2
