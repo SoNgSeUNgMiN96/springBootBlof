@@ -16,7 +16,7 @@ script: "./gradlew clean build"
 
 
 before_deploy:
-  - zip -r springBootBlog
+  - zip -r springBootBlog *
   - mkdir -p deploy
   - mv springBootBlog.zip deploy/springBootBlog.zip
 
