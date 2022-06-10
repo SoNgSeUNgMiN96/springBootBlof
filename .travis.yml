@@ -40,8 +40,8 @@ deploy:
   key: springBootBlog.zip
   bundle_type: zip
 
-  application: spring-boot-blog
-  deployment_group: spring-boot-blog-group
+  application: springBootBlog
+  deployment_group: springBootBlogGroup
 
   region: ap-northeast-2
   wait-until-deployed : true
