@@ -30,7 +30,7 @@ apply plugin: 'io.spring.dependency-management'
 
 
 group 'com.blog.springboot'
-version '1.0.4-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
+version '1.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
