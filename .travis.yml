@@ -24,9 +24,10 @@ before_deploy:    #버킷 재시도
   - mv before-deploy/before-deploy.zip deploy/springBootBlog.zip
 
 deploy:
-  - provider : s3
+  - provider: s3
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
+
     bucket: seungmin-springboot-blog
     region: ap-northeast-2
     skip_cleanup: true
@@ -36,18 +37,21 @@ deploy:
     on:
       all_branches: true
 
+
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: seungmin-springboot-blog
-    key: springBootBlog.zip
-    bundle_type: zip
-
-    application: springBootBlog
-    deployment_group: springBootBlogGroup
-
+    key : springBootBlog.zip
+    bundle_type : zip
+    application : springBootBlog
+    deployment_group : springBootBlogGroup
     region: ap-northeast-2
-    wait-until-deployed: true
+    wait-until-deployed : true
+    on:
+      all_branches: true
+
+
 
 
 # CI 실행 완료 시 메일로 알람
