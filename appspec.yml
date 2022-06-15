@@ -24,3 +24,5 @@ hooks:
       renas: ec2-user
   ValidateService:
     - location: health.sh #새 스프링부트가 정상적으로 시작되었는지를 확인합니다.
+      timeout:60
+      runas: ec2-user
